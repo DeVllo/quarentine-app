@@ -1,0 +1,31 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each data}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            {{title}}
+                        </h3>
+                        <p class="m-2">
+                            {{description}}
+                        </p></br>
+                        <p style="font-size:13px; text-align:right;">{{timeago created_at}}</p>
+                        <a href="/tasks/delete/{{id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="/tasks/edit/{{id}}" class="btn btn-warning"><i class="fa fa-pen"></i></a>
+                    </div>
+                </div>
+            </div>
+            </br>
+
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay notas guardadas aún</p>
+                    <a class="btn btn-success" href="/tasks/add"> <i class="fas fa-plus"></i> ¡Crea una!</a>
+                </div>
+            </div>
+
+        {{/each}}
+    </div>
+</div>
