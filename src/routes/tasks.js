@@ -2,13 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const pool = require('../database');
+const moment = require('moment');
+const { isLoggedIn } = require('../lib/auth');
 
-router.get('/add', (req, res) =>{
+router.get('/add', isLoggedIn, (req, res) =>{
     res.render('tasks/add');
     //res.send('Hello friend, tasks app is comming soon');
 })
 
-router.post('/add', async (req, res) =>{
+router.post('/add',isLoggedIn, async (req, res) =>{
     const { title, description } = req.body;
     const newTask = {
         title,
@@ -21,7 +23,7 @@ router.post('/add', async (req, res) =>{
     res.redirect('/tasks');
 });
 
-router.get('/', async (req, res) => {
+router.get('/', isLoggedIn, async (req, res) => {
    var data = await pool.query("SELECT * FROM  tasks");
    console.log(data);
    //console.log(req);
@@ -29,30 +31,33 @@ router.get('/', async (req, res) => {
     
 });
 
-router.get('/delete/:id', async (req, res)=>{
+router.get('/delete/:id', isLoggedIn, async (req, res)=>{
     const { id } = req.params;
     await pool.query('DELETE FROM tasks WHERE ID = ?', [id]);
     req.flash('success', '¡Tarea eliminada de forma exitosa!');
     res.redirect('/tasks');
 })
 
-router.get('/edit/:id', async (req, res)=>{
+router.get('/edit/:id',isLoggedIn, async (req, res)=>{
     const { id } = req.params;
 
     const tasks = await pool.query('SELECT * FROM tasks WHERE id = ?', [id]);
     
     res.render('tasks/edit', {tasks: tasks[0]})
-})
+});
 
-router.post('/edit/:id', async (req, res)=>{
+router.post('/edit/:id',isLoggedIn, async (req, res)=>{
+    var a = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
     const { id } = req.params;
     const { title, description } = req.body;
     const ediTask = {
         title, 
-        description
+        description,
+        edited_last : a,
+        edited: '1'
     };
     await pool.query( 'UPDATE tasks set ? WHERE id = ?', [ediTask, id]);
     req.flash('success', '¡Tarea actualizada!');
     res.redirect('/tasks');
-})
+});
 module.exports = router;

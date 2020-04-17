@@ -1,4 +1,25 @@
 <div class="container p-4">
+    <a href="/tasks/add" class="float">
+    <i class="fa fa-plus my-float"></i>
+    </a>
+    <style>
+        .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+    </style>
     <div class="row">
         {{#each data}}
             <div class="col-md-3">
@@ -10,7 +31,13 @@
                         <p class="m-2">
                             {{description}}
                         </p></br>
-                        <p style="font-size:13px; text-align:right;">{{timeago created_at}}</p>
+                        <p style="font-size:13px; text-align:right;">{{timeago created_at}}
+
+                            {{#if edited}}
+                            | <span style="font-size:10px">Editado: {{timeago edited_last}}</span>
+                            {{/if}}
+
+                        </p>
                         <a href="/tasks/delete/{{id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         <a href="/tasks/edit/{{id}}" class="btn btn-warning"><i class="fa fa-pen"></i></a>
                     </div>

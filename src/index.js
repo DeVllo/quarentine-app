@@ -6,9 +6,11 @@ const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
-
+const passport = require('passport');
 const { database } = require('./keys');
 //initalizations
+
+require('./lib/passport');
 
 //settings
 app.set('port', process.env.PORT || 4000);
@@ -32,10 +34,12 @@ app.use(session({
     store: MySQLStore(database)
 }))
 
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 
@@ -43,6 +47,8 @@ app.use(flash());
 
 app.use((req,res,next) => {
     app.locals.successAdded = req.flash('success');
+    app.locals.message = req.flash('message');
+    app.locals.user = req.user;
     next();
 })
 
@@ -58,4 +64,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Starting the server
 app.listen(app.get('port'), ()=>{
     console.log("Server on port"+app.get('port'));
-})
+});
