@@ -7,7 +7,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="/tasks/add"><i class="fa fa-sticky-note success"></i> Agregar nota <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -22,6 +22,20 @@
                         </li>
                     </ul>
                 </div>
-                {{/if}}
+                {{else}}
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-0" aria-controls="navbarSupportedContent-0" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-0">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tasks/add"><i class="fa fa-plus-square"></i> Registrarse <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tasks"><i class="fa fa-list-alt"></i> Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+                {{/if}} 
                 <!-- Fin navegacion si inició sesión -->
             </nav>
