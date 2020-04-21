@@ -1,99 +1,95 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-                <!-- Form -->
-               <!-- Material form register -->
-<div class="card">
-
-    <h5 class="card-header info-color white-text text-center py-4">
-        <strong>Registrarse</strong>
-    </h5>
-
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
-
-        <!-- Form -->
-        <form class="text-center" style="color: #757575;" method="POST" action="/signup">
-
-            <div class="form-row">
-                <div class="col">
-                    <!-- First name -->
-                    <div class="md-form">
-                        <input type="text" name="username" id="materialRegisterFormFirstName" class="form-control">
-                        <label for="materialRegisterFormFirstName">Nombre de usuario</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- Last name -->
-                    <div class="md-form">
-                        <input type="text" name="fullname" id="materialRegisterFormLastName" class="form-control">
-                        <label for="materialRegisterFormLastName">Nombre y Apellido</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- E-mail -->
-            <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" name="mail" class="form-control">
-                <label for="materialRegisterFormEmail">Correo</label>
-            </div>
-
-            <!-- Password -->
-            <div class="md-form">
-                <input type="password" name="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                <label for="materialRegisterFormPassword">Contraseña</label>
-                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                    Mínimo 8 caracteres
-                </small>
-            </div>
-
-            <!-- Phone number -->
-            <div class="md-form">
-                <input type="password" name="repeatPass" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                <label for="materialRegisterFormPhone">Repita la contraseña</label>
-            </div>
-
-            <!-- Newsletter -->
-    <!--
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
-                <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our newsletter</label>
-            </div>
-    -->
-            <!-- Sign up button -->
-            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">¡Registrarse!  <i class="fa fa-user-plus"></i></button>
-
-            <!-- Social register -->
-            <p>O registrate con:</p>
-
-            <a type="button" class="btn-floating btn-fb btn-sm">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a type="button" class="btn-floating btn-tw btn-sm">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a type="button" class="btn-floating btn-li btn-sm">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a type="button" class="btn-floating btn-git btn-sm">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <hr>
-
-            <!-- Terms of service -->
-            <p>By clicking
-                <em>Sign up</em> you agree to our
-                <a href="" target="_blank">terms of service</a>
-
-        </form>
-        <!-- Form -->
-
+<div class="card mx-5 my-5 px-5 py-5">
+  <h1>Registrarse en NotesApp</h1>
+  <form id="main" class="form-horizontal" action="/signup" method="post" novalidate>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+          <i class="material-icons prefix">account_circle</i>
+        <input id="fullname" class="form-control" type="text" name="fullname">
+        <label class="control-label" for="fullname">Nombre y Apellido</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
     </div>
-
-</div>
-<!-- Material form register -->
-                <!-- Form MDBootstrapEnd -->
+    <div class="form-group row mb-0">
+        <div class="col-sm-8 md-form px-0">
+          <i class="material-icons prefix">contact_mail</i>
+          <input id="mail" class="form-control" type="email" name="mail">
+          <label for="mail" class="control-label">Email</label>
         </div>
+        <div class="col-sm-4 messages"></div>  
     </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <i class="material-icons prefix">vpn_key</i>
+        <input id="password" class="form-control" type="password" name="password">
+        <label for="password" class="control-label">Contraseña</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <i class="material-icons prefix">vpn_key</i>
+        <input id="confirm-password" class="form-control" type="password" name="confirm-password">
+        <label class="control-label" for="confirm-password">Confirmar contraseña</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <i class="material-icons prefix">alternate_email</i>
+        <input id="username" class="form-control" type="text" name="username">
+        <label class="control-label" for="username">Nombre de usuario</label>
+      </div>
+      <div class="col-sm-4 messages">
+      </div>
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <i class="material-icons prefix">assignment_id</i>
+        <input id="dni" class="form-control" type="text" name="dni">
+        <label class="control-label" for="dni">Número de Documento Argentino</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group">
+      <div class="text-center pt-3">
+        <button type="submit" class="btn btn-dark">¡Registrarme!</button>
+      </div>
+    </div>
+    <p>¿Ya tienes una cuenta?
+        <a href="/signin">¡Inicia sesión!</a>
+      </p>
+  </form>
 </div>
+<style>
+    .card{
+min-height: 82vh;
+}
+.form-group{
+  margin: 0 0;
+}
+.md-form{
+margin: 16px 0;
+}
+.help-block.error {
+  margin-bottom: 5px;
+}
+.has-error label{
+  color: #ff3547 !important;
+}
+.has-error input.form-control{
+  border-bottom-color: #ff3547 !important;
+}
+.has-success label{
+  color:#28a745 !important;
+}
+.has-success input.form-control{
+  border-bottom-color: #28a745 !important;
+}
+.conicon{
+ display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+}
+</style>
+<script src="validationAuth.js"></script>

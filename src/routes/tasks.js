@@ -14,7 +14,8 @@ router.post('/add',isLoggedIn, async (req, res) =>{
     const { title, description } = req.body;
     const newTask = {
         title,
-        description
+        description,
+        user_id: req.user.id
     }
     console.log(newTask);
     //pool.query('INSERT INTO tasks set ?',[newTask]);
@@ -24,7 +25,7 @@ router.post('/add',isLoggedIn, async (req, res) =>{
 });
 
 router.get('/', isLoggedIn, async (req, res) => {
-   var data = await pool.query("SELECT * FROM  tasks");
+   var data = await pool.query("SELECT * FROM  tasks WHERE user_id = ?", [req.user.id]);
    console.log(data);
    //console.log(req);
    res.render('tasks/list', { data }); 

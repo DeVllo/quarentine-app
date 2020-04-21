@@ -8,6 +8,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const passport = require('passport');
 const { database } = require('./keys');
+//const validationForm = require('./lib/validationAuth');
 //initalizations
 
 require('./lib/passport');
@@ -40,6 +41,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
+
+//app.use(validationForm({extended:false}));
 
 
 

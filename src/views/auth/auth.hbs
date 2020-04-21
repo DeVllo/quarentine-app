@@ -1,0 +1,79 @@
+<div class="card mx-5 my-5 px-5 py-5">
+  <h1>Registrarse en NotesApp</h1>
+  <form id="main" class="form-horizontal" action="/auth" method="post" novalidate>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <input id="nameAndLast" class="form-control" type="text" name="nameAndLast">
+        <label class="control-label" for="nameAndLast">Nombre y Apellido</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group row mb-0">
+        <div class="col-sm-8 md-form px-0">
+          <input id="email" class="form-control" type="email" name="email">
+          <label for="email" class="control-label">Email</label>
+        </div>
+        <div class="col-sm-4 messages"></div>  
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <input id="password" class="form-control" type="password" name="password">
+        <label for="password" class="control-label">Contraseña</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <input id="confirm-password" class="form-control" type="password" name="confirm-password">
+        <label class="control-label" for="confirm-password">Confirmar contraseña</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <input id="username" class="form-control" type="text" name="username">
+        <label class="control-label" for="username">Nombre de usuario</label>
+      </div>
+      <div class="col-sm-4 messages">
+      </div>
+    </div>
+    <div class="form-group row mb-0">
+      <div class="col-sm-8 md-form px-0">
+        <input id="dni" class="form-control" type="text" name="dni">
+        <label class="control-label" for="dni">Número de Documento Argentino</label>
+      </div>
+      <div class="col-sm-4 messages"></div>
+    </div>
+    <div class="form-group">
+      <div class="text-center pt-3">
+        <button type="submit" class="btn btn-dark">¡Registrarme!</button>
+      </div>
+    </div>
+  </form>
+</div>
+<style>
+    .card{
+min-height: 82vh;
+}
+.form-group{
+  margin: 0 0;
+}
+.md-form{
+margin: 16px 0;
+}
+.help-block.error {
+  margin-bottom: 5px;
+}
+.has-error label{
+  color: #ff3547 !important;
+}
+.has-error input.form-control{
+  border-bottom-color: #ff3547 !important;
+}
+.has-success label{
+  color:#28a745 !important;
+}
+.has-success input.form-control{
+  border-bottom-color: #28a745 !important;
+}
+</style>

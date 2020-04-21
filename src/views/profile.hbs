@@ -1,14 +1,92 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h3>Welcome {{user.fullname}} </h3>
-                    <h4>{{user.username}}</h4>
-                    <br/>
-                    <button class="btn purple-gradient">¿Queres mejorar tu cuenta rey?</button>
-                </div>
-            </div>
+<div class="container">
+    <div class="row my-5">
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item active">
+            <a>
+            <div class="md-v-line"></div><i class="fa fa-laptop mr-4 pr-3"></i> Ver mi perfil
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a>
+            <div class="md-v-line"></div><i class="fa fa-bomb mr-5"></i>Ver mis notas
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a>
+            <div class="md-v-line"></div><i class="fa fa-code mr-5"></i>Actualizar mis datos
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">
+            <div class="md-v-line"></div><i class="fa fa-diamond mr-5"></i>Mejorar cuenta
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a>
+            <div class="md-v-line"></div><i class="fa fa-gear mr-5"></i>Configuración
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+          <ul class="list-group">
+            <li class="list-group-item">
+                <a class="text-white btn-floating btn-slack btn-sm"><i class="fa fa-slack"></i></a><a class="text-white btn-floating btn-slack btn-sm"><i class="fa fa-user"></i></a>
+              <h3>{{user.fullname}}</h3>
+            </li>
+            <li class="list-group-item">
+              <a class="text-white btn-floating btn-slack btn-sm"><i class="fa fa-slack"></i></a>@{{user.username}}
+            </li>
+            <li class="list-group-item">
+              <a class="text-white btn-floating btn-slack btn-sm"><i class="fa fa-slack"></i></a>{{user.mail}}
+            </li>
+            <li class="list-group-item">
+              <a class="text-white btn-floating btn-slack btn-sm"><i class="fa fa-slack"></i></a>Mis notas: 2
+              ac
+            </li>
+            <li class="list-group-item">
+              <a class="text-white btn-floating btn-yt btn-sm"><i class="fa fa-youtube"></i></a>Cuenta: <span style="color: #28a745;">activa</span>.
+            </li>
+          </ul>
+        </ul>
+      </div>
+    
+          <div class="col-md-6 mt-5">
+        <div class="list-group-flush">
+          <div class="list-group-item">
+            <p class="mb-0"><i class="fa fa-instagram fa-2x mr-4 blue p-3 white-text rounded " aria-hidden="true"></i>Photos</p>
+          </div>
+          <div class="list-group-item">
+            <p class="mb-0"> <i class="fa fa-slack fa-2x mr-4 mr-4 red p-3 white-text rounded" aria-hidden="true"></i>Work</p>
+          </div>
+          <div class="list-group-item">
+            <p class="mb-0"><i class="fa fa-snapchat fa-2x mr-4 mr-4 purple p-3 white-text rounded" aria-hidden="true"></i>Vacation</p>
+          </div>
         </div>
+      </div>
+            <div class="col-md-6 mt-5">
+        <div class="list-group-flush">
+          <div class="list-group-item">
+            <p class="mb-0"><i class="fa fa-photo fa-2x mr-4 grey p-3 white-text rounded-circle " aria-hidden="true"></i>Photos</p>
+          </div>
+          <div class="list-group-item">
+            <p class="mb-0"> <i class="fa fa-briefcase fa-2x mr-4 mr-4 grey p-3 white-text rounded-circle" aria-hidden="true"></i>Work</p>
+          </div>
+          <div class="list-group-item">
+            <p class="mb-0"><i class="fa fa-anchor fa-2x mr-4 mr-4 grey p-3 white-text rounded-circle" aria-hidden="true"></i>Vacation</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+<style>
+        .md-v-line {
+      position: absolute;
+    border-left: 1px solid rgba(0,0,0,.125);
+    height: 50px;
+    top:0px;
+    left:54px;
+}
+</style>
