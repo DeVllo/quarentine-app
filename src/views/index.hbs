@@ -1,0 +1,25 @@
+<div class="container p-4">
+    <div class="card">
+        <h4 class="card-title text-center">¡ALERTA COVID-19!</h4>
+        <select class="form-control browser-default custom-select" name="" id="selectCountry">
+            <option value="argentina">Argentina</option>
+            {{#each data}}
+            <option value="{{Slug}}">{{Country}}</option>
+            {{/each}}
+        </select>
+        <div class="card-body" id="cardBody">
+            <h3>Información para <span id="paisName"></span>
+            </h3>
+            </br>
+            <p>Casos confirmados: <span class="badge badge-warning" id="confirmedCases">-</span></p>
+            <p>Muertes: <span class="badge badge-danger" id="deaths">-</span></p>
+            <p>Recuperados: <span class="badge badge-success" id="recovereds">-</span></p>
+        </div>
+        <p style="font-size: 8px;">By <a href="https://twitter.com/tostad0r">tostad0r</a> // DeVllo</p>
+    </div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
+<script src="js/covid19.js"></script>

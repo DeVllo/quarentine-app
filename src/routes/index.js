@@ -2,8 +2,30 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../database');
 const { apiKey } = require('../keys');
+const axios = require('axios');
+
+//Obtenemos los países del covid19api.com
+var str = 'https://api.covid19api.com/countries';
+
 router.get('/', (req, res) => {
-    res.render('index');
+    ////////////////////////
+    axios.get(str)
+    .then(response => {
+        console.log(response);
+        var data = response.data;
+        let result = data.map(a => a.Country);
+        var countries = [];
+        for(var i; i < result.length; i++){
+            countries.push(result[i]);
+        }
+        res.render('index', {data})
+        //console.log(data)
+    })
+    .catch(error => {
+      console.log(error);
+    });
+    ///////////////////////
+    //res.render('index');
 })
 
 router.get('/api/checkusername/:pass/:username', async (req, res) => {

@@ -25,7 +25,7 @@ router.post('/add',isLoggedIn, async (req, res) =>{
 });
 
 router.get('/', isLoggedIn, async (req, res) => {
-   var data = await pool.query("SELECT * FROM  tasks WHERE user_id = ?", [req.user.id]);
+   var data = await pool.query("SELECT * FROM tasks WHERE user_id = ?", [req.user.id]);
    console.log(data);
    //console.log(req);
    res.render('tasks/list', { data }); 

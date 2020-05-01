@@ -140,7 +140,7 @@
           if (response.existe === true){
               //Existe el usuario:
               alert("Lo sentimos, el nombre de usuario está en uso :(");
-          }
+          } 
           else{
             //No existe el usuario...
             showSuccess();

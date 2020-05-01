@@ -11,6 +11,11 @@ module.exports = {
         return next();
         }
         return res.redirect('/profile');
+    },
+    isAdmin(req, res, next){
+        if(user.admin){
+            
+        }
     }
 
 };

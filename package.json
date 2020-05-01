@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DeVllo/quarentine-app#readme",
   "dependencies": {
     "@material/select": "^5.1.0",
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "express": "^4.17.1",
